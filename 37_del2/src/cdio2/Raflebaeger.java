@@ -1,6 +1,6 @@
 package cdio2;
 
-import CDIO_del2.Terning;
+
 
 public class Raflebaeger {
 
