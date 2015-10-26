@@ -1,17 +1,19 @@
 package cdio2;
 
 public class Terning {
+	private int vaerdi;
 
-		private int vaerdi;
-		
-		public int roll() {
-			this.vaerdi = (int) (Math.random() * 6 + 1); 
-			return this.vaerdi;
-		}
-		
-		public int getVaerdi() {
-			return this.vaerdi;
-		}
+	public int roll() {		
+      this.vaerdi =  (int) (Math.random() * 6 + 1);
+      return this.vaerdi;	
 	}
 
+	public int getVaerdi() {
+		return vaerdi;
+	}
 
+	public void setVaerdi(int vaerdi) {
+		this.vaerdi = vaerdi;
+	}
+
+}
