@@ -4,6 +4,7 @@ public class Spiller {
 
 	private String navn;
 	private Konto konto;
+	private boolean bankRupt = false;
 
 	public Spiller() {
 
@@ -29,6 +30,11 @@ public class Spiller {
 	public void setSaldo(int point) {
 		this.konto.setPengebeholdning(point);
 
+	}
+
+	public boolean isBankrupt() {
+		// TODO Auto-generated method stub
+		return bankRupt ;
 	}
 
 }
