@@ -2,12 +2,11 @@
 package cdio2;
 
 import java.awt.Color;
-import java.util.Scanner;
-
 import desktop_codebehind.Car;
 import desktop_fields.*;
 import desktop_fields.Street;
 import desktop_resources.GUI;
+
 public class Controller {
 	Spiller spiller1 = new Spiller();
 	Spiller spiller2 = new Spiller();
@@ -71,33 +70,41 @@ public class Controller {
 		felter[3]=new Felt("Crater", -100);
 		felter[4]=new Felt("Palace gates", 100);
 		felter[5]=new Felt("Cold Desert", -20);
-		felter[6]=new Felt("Cold Desert", -20);
-		felter[7]=new Felt("Cold Desert", -20);
-		felter[8]=new Felt("Cold Desert", -20);
-		felter[9]=new Felt("Cold Desert", -20);
-		felter[10]=new Felt("Cold Desert", -20);
-		felter[11]=new Felt("Cold Desert", -20);
-		felter[12]=new Felt("Cold Desert", -20);
+		felter[6]=new Felt("Walled city", 180);
+		felter[7]=new Felt("Monastery", 0);
+		felter[8]=new Felt("Black cave", -70);
+		felter[9]=new Felt("Huts in the mountain", 60);
+		felter[10]=new Felt("The werewall(werewolf-wall)", -80);
+		felter[11]=new Felt("The pit", -50);
+		felter[12]=new Felt("Goldmine", 650);
 		
 		
-		spiller1.setNavn("Brian");
-		spiller2.setNavn("Børge");
+		spiller1.setNavn(" Ronaldo");
+		spiller2.setNavn(" Messi");
 	}
 
 	private void setupGUI() {
-		Field[] fields = new Field[2];
-		fields[0] = new Street.Builder()
-				.setBgColor(Color.CYAN).setTitle("tower")
-				.build();
 		
-		fields[1] = new Street.Builder().setBgColor(Color.blue)	.setTitle("christian").build();	
+		Field[] fields = new Field[2];
+		fields[0] = new Street.Builder().setBgColor(Color.CYAN).setTitle("tower").build();
+		fields[1] = new Street.Builder().setBgColor(Color.blue).setTitle("Crater").build();	
+		fields[2] = new Street.Builder().setBgColor(Color.CYAN).setTitle("Palace gates").build();
+		fields[3] = new Street.Builder().setBgColor(Color.blue).setTitle("Cold Desert").build();
+		fields[4] = new Street.Builder().setBgColor(Color.CYAN).setTitle("Walled city").build();
+		fields[5] = new Street.Builder().setBgColor(Color.blue).setTitle("Monastery").build();
+		fields[6] = new Street.Builder().setBgColor(Color.CYAN).setTitle("Black cave").build();
+		fields[7] = new Street.Builder().setBgColor(Color.blue).setTitle("Huts in the mountain").build();
+		fields[8] = new Street.Builder().setBgColor(Color.CYAN).setTitle("The werewall(werewolf-wall)").build();
+		fields[9] = new Street.Builder().setBgColor(Color.blue).setTitle("The pit").build();
+		fields[10] = new Street.Builder().setBgColor(Color.CYAN).setTitle("Goldmine").build();
+				
 		GUI.create(fields);
 		
 		Car car = new Car.Builder()
-				.typeUfo()
+				.typeCar()
 				.patternHorizontalDualColor()
 				.primaryColor(Color.RED)
-				.secondaryColor(Color.BLUE)
+				.secondaryColor(Color.WHITE)
 				.build();
 		GUI.addPlayer(spiller1.getNavn(), 1000, car);
 	}
