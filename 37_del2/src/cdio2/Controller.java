@@ -35,15 +35,33 @@ public class Controller {
 
 				System.exit(0);
 			}
+			
+			if(spiller2.getSaldo()>=3000 ){
+				GUI.showMessage("spiller 2 vinder spillet med "+ spiller2.getSaldo()+ "point");
+
+				System.exit(0);
+			}
 
 			if(spiller2.getSaldo()>=3000 || spiller1.isBankrupt()){
 				GUI.showMessage("spiller 2 vinder spillet med "+ spiller2.getSaldo()+ "point");
 
 				System.exit(0);
 			}
+			
+			if(spiller1.getSaldo()>=3000 || spiller2.isBankrupt()){
+				GUI.showMessage("spiller 1 vinder spillet med "+ spiller1.getSaldo()+ "point");
+
+				System.exit(0);
+			}
 			//TODO fix logic error and merge with above
 			if(spiller2.getSaldo() < 1){
 				GUI.showMessage("spiller 2 vinder spillet med "+ spiller2.getSaldo()+ "point");
+
+				System.exit(0);
+			}
+			
+			if(spiller1.getSaldo() < 1){
+				GUI.showMessage("spiller 1 vinder spillet med "+ spiller1.getSaldo()+ "point");
 
 				System.exit(0);
 			}
@@ -61,7 +79,7 @@ public class Controller {
 		spiller.setSaldo(spiller.getSaldo()+point);
 		GUI.setBalance(spiller.getNavn(), spiller.getSaldo());
 
-		System.out.println("spiller" + spiller.getNavn() + "  har slået: " + slag + " han fik: "+ point + " og han har landet på felter: "+ 
+		System.out.println("spiller" + spiller.getNavn() + "  har slået: " + slag + " han fik: "+ point + " og han har landet på felt: "+ 
 				felt+ ", saldo:"+ spiller.getSaldo());		
 	}
 
@@ -85,7 +103,7 @@ public class Controller {
 
 	private void setupGUI() {
 		
-		Field[] fields = new Field[2];
+		Field[] fields = new Field[11];
 		fields[0] = new Street.Builder().setBgColor(Color.CYAN).setTitle("tower").build();
 		fields[1] = new Street.Builder().setBgColor(Color.blue).setTitle("Crater").build();	
 		fields[2] = new Street.Builder().setBgColor(Color.CYAN).setTitle("Palace gates").build();
