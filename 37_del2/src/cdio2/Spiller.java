@@ -1,9 +1,13 @@
 package cdio2;
 
+import desktop_codebehind.FieldFactory;
+import desktop_fields.Field;
+
 public class Spiller {
 
 	private String navn;
 	private Konto konto;
+	private boolean bankRupt = false;
 
 	public Spiller() {
 
@@ -31,4 +35,9 @@ public class Spiller {
 
 	}
 
+	public boolean isBankrupt() {
+		// TODO Auto-generated method stub
+		return bankRupt ;
+	}
+	
 }
