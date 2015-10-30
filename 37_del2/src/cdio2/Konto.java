@@ -8,7 +8,7 @@ public class Konto {
 		return pengebeholdning;
 	}
 
-	public void setPengebeholdning(int pengebeholdning) {
+	public void addToPengebeholdning(int pengebeholdning) {
 		this.pengebeholdning = pengebeholdning + this.pengebeholdning ;
 	}
 

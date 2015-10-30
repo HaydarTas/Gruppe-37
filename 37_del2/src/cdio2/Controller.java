@@ -52,7 +52,7 @@ public class Controller {
 
 		int point = felter[slag].getPoint();
 		String felt = felter[slag].getfeltNavn();
-		spiller.setSaldo(point);
+		spiller.addToSaldo(point);
 		GUI.setBalance(spiller.getNavn(), spiller.getSaldo());
 
 		System.out.println("spiller" + spiller.getNavn() + "  har slået: " + slag + " han fik: " + point

@@ -13,7 +13,7 @@ public class Spiller {
 
 		this.konto = new Konto();
 
-		this.konto.setPengebeholdning(1000);
+		this.konto.addToPengebeholdning(1000);
 
 	}
 
@@ -30,13 +30,13 @@ public class Spiller {
 
 	}
 
-	public void setSaldo(int point) {
-		this.konto.setPengebeholdning(point);
+	public void addToSaldo(int point) {
+		this.konto.addToPengebeholdning(point);
 
 	}
 
 	public boolean isBankrupt() {
-		// TODO Auto-generated method stub
+		
 		return bankRupt ;
 	}
 	
