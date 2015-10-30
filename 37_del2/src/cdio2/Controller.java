@@ -103,8 +103,8 @@ public class Controller {
 		fields[9] = new Street.Builder().setBgColor(Color.blue).setTitle("The pit").build();
 		fields[10] = new Street.Builder().setBgColor(Color.CYAN).setTitle("Goldmine").build();
 		
-		spiller1.setNavn(" Ronaldo");
-		spiller2.setNavn(" Messi");	
+		spiller1.setNavn(" Christian");
+		spiller2.setNavn(" Ronni");	
 	
 		GUI.create(fields);
 		
