@@ -39,5 +39,5 @@ public class Spiller {
 		// TODO Auto-generated method stub
 		return bankRupt ;
 	}
-	
+
 }
