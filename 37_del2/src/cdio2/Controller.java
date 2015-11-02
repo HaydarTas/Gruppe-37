@@ -77,6 +77,14 @@ public class Controller {
 
 		System.out.println("spiller" + spiller.getNavn() + "  har slået: " + slag + " han fik: " + point
 				+ " og han har landet på felt: " + felt + ", saldo:" + spiller.getSaldo());
+		GUI.removeAllCars(spiller.getNavn());
+		GUI.setCar(slag-1, spiller.getNavn());
+		try {
+			Thread.sleep(200);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 	}
 

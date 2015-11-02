@@ -13,11 +13,11 @@ public class Felt {
 	}
 
 	@Override
-	//hvornår bliver den brugt??
+	
 	public String toString() {
 		return "felt [name=" + name + ", point=" + point + "]";
 	}
-	// hvorfor denne metode da get feltNavn er gør det samme.?
+	// ekstra getter.
 	public String getName() {
 		return name;
 	}
