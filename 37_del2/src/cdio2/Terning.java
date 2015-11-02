@@ -7,13 +7,10 @@ public class Terning {
       this.vaerdi =  (int) (Math.random() * 6 + 1);
       return this.vaerdi;	
 	}
-
+	// getvaerdi skal oprettes så klasser udfra kan hente værdien for vaerdi.
 	public int getVaerdi() {
 		return vaerdi;
 	}
 
-//	public void setVaerdi(int vaerdi) {
-	//	this.vaerdi = vaerdi;
-	//}
 
 }

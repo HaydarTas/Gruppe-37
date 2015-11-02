@@ -8,9 +8,12 @@ import desktop_fields.Street;
 import desktop_resources.GUI;
 
 public class Controller {
+	
 	Spiller spiller1 = new Spiller();
 	Spiller spiller2 = new Spiller();
+	
 	Raflebaeger baeger = new Raflebaeger();
+	
 	Felt[] felter = new Felt[13];
 
 	public static void main(String[] args) {
@@ -27,21 +30,32 @@ public class Controller {
 
 			playerTurn(spiller1);
 
-			if (spiller1.getSaldo() >= 3000 || spiller2.isBankrupt()) {
-				GUI.showMessage("spiller 1 vinder spillet med " + spiller1.getSaldo() + "point");
-				System.out.println("spiller 1 vinder spillet med " + spiller1.getSaldo() + "point");
-
+			if (spiller1.getSaldo() >= 3000) {
+				GUI.showMessage("spiller "+ spiller1.getNavn() +" vinder spillet med " + spiller1.getSaldo() + "point");
+				System.out.println("spiller "+spiller1.getNavn()+" vinder spillet med " + spiller1.getSaldo() + "point");
+				break;
+			}
+			else if (spiller2.isBankrupt()) {
+				GUI.showMessage("spiller "+spiller1.getNavn()+" vinder spillet da spiller "+spiller2.getNavn()+" gik konkurs. ");
+				System.out.println("spiller "+spiller1.getNavn()+" vinder spillet da spiller "+spiller2.getNavn()+" gik konkurs. ");
 				break;
 			}
 
 			playerTurn(spiller2);
 
-			if (spiller2.getSaldo() >= 3000 || spiller1.isBankrupt()) {
-				GUI.showMessage("spiller 2 vinder spillet med " + spiller2.getSaldo() + "point");
-				System.out.println("spiller 2 vinder spillet med " + spiller2.getSaldo() + "point");
+			if (spiller2.getSaldo() >= 3000) {				
+				GUI.showMessage("spiller "+ spiller2.getNavn() +" vinder spillet med " + spiller2.getSaldo() + "point");
+				System.out.println("spiller "+spiller2.getNavn()+" vinder spillet med " + spiller2.getSaldo() + "point");
+
+				
 				break;
 			}
+			else if (spiller1.isBankrupt()) {
+				GUI.showMessage("spiller "+spiller2.getNavn()+" vinder spillet da spiller "+spiller1.getNavn()+" gik konkurs. ");
+				System.out.println("spiller "+spiller2.getNavn()+" vinder spillet da spiller "+spiller1.getNavn()+" gik konkurs. ");
 
+				break;
+			}
 		}
 
 	}
@@ -52,8 +66,14 @@ public class Controller {
 
 		int point = felter[slag].getPoint();
 		String felt = felter[slag].getfeltNavn();
-		spiller.addToSaldo(point);
-		GUI.setBalance(spiller.getNavn(), spiller.getSaldo());
+		boolean saldo_tjek = spiller.addToSaldo(point);
+		
+		if(saldo_tjek == true){
+			GUI.setBalance(spiller.getNavn(), spiller.getSaldo());			
+		}
+		else{
+			spiller.setBankRupt();
+		}
 
 		System.out.println("spiller" + spiller.getNavn() + "  har slået: " + slag + " han fik: " + point
 				+ " og han har landet på felt: " + felt + ", saldo:" + spiller.getSaldo());

@@ -8,8 +8,13 @@ public class Konto {
 		return pengebeholdning;
 	}
 
-	public void addToPengebeholdning(int pengebeholdning) {
-		this.pengebeholdning = pengebeholdning + this.pengebeholdning ;
+	public boolean addToPengebeholdning(int pengebeholdning) {
+		if(this.pengebeholdning + pengebeholdning < 0){
+			return false;
+		}else{
+			this.pengebeholdning = pengebeholdning + this.pengebeholdning ;	
+			return true;
+		}
 	}
 
 }

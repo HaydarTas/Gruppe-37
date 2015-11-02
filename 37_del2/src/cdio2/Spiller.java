@@ -1,5 +1,6 @@
 package cdio2;
 
+
 import desktop_codebehind.FieldFactory;
 import desktop_fields.Field;
 
@@ -30,14 +31,15 @@ public class Spiller {
 
 	}
 
-	public void addToSaldo(int point) {
-		this.konto.addToPengebeholdning(point);
+	public boolean addToSaldo(int point) {
+		return this.konto.addToPengebeholdning(point);
 
 	}
 
 	public boolean isBankrupt() {
-		
 		return bankRupt ;
 	}
-	
+	public void setBankRupt(){
+		bankRupt = true;
+	}
 }

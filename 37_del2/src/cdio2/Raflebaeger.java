@@ -19,14 +19,16 @@ public class Raflebaeger {
 	}
 	
 	public boolean isEqual(){
-		if (t1.getVaerdi()==t2.getVaerdi()) return true;
+		if (t1.getVaerdi()==t2.getVaerdi()){
+			 return true;
+		}
 		return false;
 	}
 
 	
 	public int getDiceSum(int res){
 
-		return t1.getVaerdi()+t2.getVaerdi();
+		return t1.getVaerdi() + t2.getVaerdi();
 		
 	}
 
