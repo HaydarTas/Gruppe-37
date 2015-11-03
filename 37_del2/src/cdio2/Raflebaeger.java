@@ -26,7 +26,7 @@ public class Raflebaeger {
 	}
 
 	
-	public int getDiceSum(int res){
+	public int getTerningSum(int res){
 
 		return t1.getVaerdi() + t2.getVaerdi();
 		

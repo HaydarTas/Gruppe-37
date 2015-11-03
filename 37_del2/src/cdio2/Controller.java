@@ -35,7 +35,7 @@ public class Controller {
 				System.out.println("spiller "+spiller1.getNavn()+" vinder spillet med " + spiller1.getSaldo() + "point");
 				break;
 			}
-			else if (spiller2.isBankrupt()) {
+			else if (spiller2.konkurs()) {
 				GUI.showMessage("spiller "+spiller1.getNavn()+" vinder spillet da spiller "+spiller2.getNavn()+" gik konkurs. ");
 				System.out.println("spiller "+spiller1.getNavn()+" vinder spillet da spiller "+spiller2.getNavn()+" gik konkurs. ");
 				break;
@@ -50,7 +50,7 @@ public class Controller {
 				
 				break;
 			}
-			else if (spiller1.isBankrupt()) {
+			else if (spiller1.konkurs()) {
 				GUI.showMessage("spiller "+spiller2.getNavn()+" vinder spillet da spiller "+spiller1.getNavn()+" gik konkurs. ");
 				System.out.println("spiller "+spiller2.getNavn()+" vinder spillet da spiller "+spiller1.getNavn()+" gik konkurs. ");
 
@@ -72,13 +72,14 @@ public class Controller {
 			GUI.setBalance(spiller.getNavn(), spiller.getSaldo());			
 		}
 		else{
-			spiller.setBankRupt();
+			spiller.setKonkurs();
 		}
 
 		System.out.println("spiller" + spiller.getNavn() + "  har slået: " + slag + " han fik: " + point
 				+ " og han har landet på felt: " + felt + ", saldo:" + spiller.getSaldo());
 		GUI.removeAllCars(spiller.getNavn());
 		GUI.setCar(slag-1, spiller.getNavn());
+		//Suspend excecution for 200 ms
 		try {
 			Thread.sleep(200);
 		} catch (InterruptedException e) {

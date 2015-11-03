@@ -8,7 +8,7 @@ public class Spiller {
 
 	private String navn;
 	private Konto konto;
-	private boolean bankRupt = false;
+	private boolean konkurs = false;
 
 	public Spiller() {
 
@@ -36,10 +36,10 @@ public class Spiller {
 
 	}
 
-	public boolean isBankrupt() {
-		return bankRupt ;
+	public boolean konkurs() {
+		return konkurs ;
 	}
-	public void setBankRupt(){
-		bankRupt = true;
+	public void setKonkurs(){
+		konkurs = true;
 	}
 }
