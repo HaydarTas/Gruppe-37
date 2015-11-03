@@ -6,7 +6,7 @@ public class Raflebaeger {
 
 	private Terning t1 = new Terning();
 	private Terning t2 = new Terning();
-    private String feltNavn; 
+     
     
     
 	public int roll() {
