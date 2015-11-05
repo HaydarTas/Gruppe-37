@@ -1,5 +1,5 @@
 
-package cdio2;
+package src.cdio2;
 
 import java.awt.Color;
 import desktop_codebehind.Car;
@@ -61,7 +61,7 @@ public class Controller {
 		spiller.setSaldo(point);
 		GUI.setBalance(spiller.getNavn(), spiller.getSaldo());
 		
-		System.out.println("spiller" + spiller.getNavn() + "  har slået: " + slag + " han fik: "+
+		System.out.println("spiller" + spiller.getNavn() + "  har sl�et: " + slag + " han fik: "+
 		point + " og han har landet på felt: "+ 
 				felt+ ", saldo:"+ spiller.getSaldo());
 		
